@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Group_56" data-name="Group 56" viewBox="0 0 64.624 64.62">
+    <defs>
+        <style>
+            .cls-1,.cls-2{fill:#fff}.cls-2{fill-rule:evenodd}
+        </style>
+    </defs>
+    <path id="Path_263" d="M32.312 0a32.308 32.308 0 0 1 22.847 55.155A32.309 32.309 0 1 1 9.465 9.465 32.109 32.109 0 0 1 32.312 0zM53.4 11.227a29.7 29.7 0 1 0 8.809 21.083A29.918 29.918 0 0 0 53.4 11.227z" class="cls-1" data-name="Path 263"/>
+    <path id="Path_264" d="M47.918 34.121v-2.676a1.4 1.4 0 0 1 1.436-1.567h3.721V24.2h-5.092c-5.679 0-6.919 4.177-6.919 6.919v3H37.8v6.593h3.329v16.516h6.593V40.714h4.9l.2-2.611.392-3.982h-5.296z" class="cls-2" data-name="Path 264" transform="translate(-13.125 -8.404)"/>
+</svg>

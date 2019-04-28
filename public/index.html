@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Pushstart | India's most active community for Entrepreneurs</title>
+  <meta name="description" content="India's most active community for Entrepreneurs" property="description">
+  <meta name="keywords" content="community, pushstart, Entrepreneurs, startup, github, template, boilerplate" property="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1" property="viewport">
+  <meta name="og:title" content="Pushstart" property="og:title">
+  <meta name="og:description" content="India's most active community for Entrepreneurs" property="og:description">
+  <meta name="og:image" content="https://firebasestorage.googleapis.com/v0/b/pushstart-38483.appspot.com/o/res%2Fps_logo.png?alt=media&token=ac6c87e0-2810-4c0f-a6e7-a99a05717f07" property="og:image">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="./res/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121801739-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-121801739-1');
+  </script>
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WLCHKLN');</script>
+  <!-- End Google Tag Manager -->
+
+
+  <script>
+    window.onload = function () {
+      let elements = document.getElementsByClassName('typewrite');
+      for (let i = 0; i < elements.length; ++i) {
+        let messages = elements[i].getAttribute('data-type');
+        let speed = elements[i].getAttribute('data-speed');
+        let period = elements[i].getAttribute('data-period');
+        if (messages) new Typewriter(elements[i], JSON.parse(messages), speed, period);
+      }
+    };
+
+    function Typewriter(el, messages, speed, period) {
+      this.el = el;
+      this.messages = messages;
+      this.speed = parseInt(speed, 10) || 200;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = '';
+      this.loops = 0;
+      this.isClearing = false;
+      this.tick();
+    }
+
+    Typewriter.prototype.tick = function () {
+      let msg = this.messages[this.loops % this.messages.length];
+      let edge = this.isClearing ? this.txt.length - 1 : this.txt.length + 1;
+      this.txt = msg.substring(0, edge);
+      this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+      var delta = this.speed / 2 + Math.random() * this.speed;
+      if (this.isClearing) delta /= 2;
+
+      if (!this.isClearing && this.txt === msg) {
+        this.isClearing = true;
+        delta = this.period;
+      } else if (this.isClearing && this.txt === '') {
+        this.loops++;
+        this.isClearing = false;
+        delta = this.period / 2;
+      }
+      setTimeout(() => this.tick(), delta);
+    };
+  </script>
+
+
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLCHKLN"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="root"></div>
+  <section class="top-header">
+      <div class="container">
+        <div class="row flex-container">
+          <div class="col-md-6 d-none d-lg-block">
+            <div>
+
+              <p class="text-light">
+                <span class="text-semibold">Push</span> Your
+              </p>
+
+              <p class="text-extrabold typewrite"
+              data-speed="200"
+              data-period="2000"
+              data-type='[
+                  "Problems",
+                  "Startup",
+                  "Ideas",
+                  "Knowledge"
+                ]'>
+              </p>
+
+              <p class="text-light">To The World</p>
+              <div class="subscription-form">
+                <form id="newContact" onsubmit="contactScript(this);return false">
+                  <div class="input-group">
+                      <input type="email" name="email" id="email-header" placeholder="Enter your email id..." class="form-control subscribe-mail" required>
+                      <div class="input-group-btn">
+                          <input type="submit" value="Push Now" class="btn btn-default subscribe-button" id="subscribe-submit-header"/>
+                        </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 d-none d-lg-block">
+            <img src="./res/person.png" style="width:105%" />
+          </div>
+
+          <!-- for screen smaller or equal to 992 (Tablet) -->
+
+          <div class="col-md-12 d-lg-none header-text">
+            <div>
+              <p class="text-light">
+                <span class="text-semibold">Push</span> Your
+              </p>
+
+              <p class="text-extrabold typewrite"
+              data-speed="200"
+              data-period="2000"
+              data-type='[
+                  "Problems",
+                  "Startup",
+                  "Ideas",
+                  "Knowledge"
+                ]'>
+              </p>
+
+              <p class="text-light">To The World</p>
+              <div class="subscription-form">
+                <form id="newContact"  onsubmit="contactScript(this);return false">
+                  <div class="input-group">
+                      <input type="email" name="email" id="email-small" placeholder="Enter your email id..." class="form-control subscribe-mail" required>
+                      <div class="input-group-btn">
+                          <input type="submit" value="Push Now" class="btn btn-default subscribe-button" id="subscribe-submit-small"/>
+                        </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- for screens larger than tablet size -->
+
+  <section class="d-none d-lg-block" id="main-content">
+    <div class="container">
+      <div class="content-title">
+        <h1>Our Key Achievements</h1>
+      </div>
+      <div class="row feature-content">
+        <div class="col-md-4" style="display: flex ; flex-direction: column; align-items: center; justify-content: center;">
+          <h1 class="text-light"><span class="content-highlighter text-semibold">2k+</span> </br>Ideas Pushed</h1>
+          <p class="text-light content-para">Push your Ideas and Get Feedback from like-minded Entrepreneurs. </p>
+        </div>
+
+        <div class="col-md-8">
+          <img src="./res/1.png"/>
+        </div>
+      </div>
+
+      <div class="row feature-content">
+        <div class="col-md-8">
+          <img src="./res/2.png"/>
+        </div>
+        <div class="col-md-4" style="display: flex ; flex-direction: column; align-items: center; justify-content: center;">
+          <h1 class="text-light"><span class="content-highlighter text-semibold">1K+</span> Startups Launched</h1>
+          <p class="text-light content-para">India’s only platform to Launch your startup and Gain initial traction.</p>
+        </div>
+      </div>
+
+      <div class="row feature-content">
+        <div class="col-md-4" style="display: flex ; flex-direction: column; align-items: center; justify-content: center;">
+          <h1 class="text-light"><span class="content-highlighter text-semibold">10K+</span> Problems Pushed</h1>
+          <p class="text-light content-para">Ask questions and Seek connections in India’s most active community of Entrepreneurs and Investors.</p>
+        </div>
+        <div class="col-md-8">
+          <img src="./res/3.jpg"/>
+        </div>
+      </div>
+
+      <div class="row feature-content">
+        <div class="col-md-8">
+          <img src="./res/4.png"/>
+        </div>
+        <div class="col-md-4" style="display: flex ; flex-direction: column; align-items: center; justify-content: center;">
+          <h1 class="text-light"><span class="content-highlighter text-semibold">Countless</span> Knowledge Shared</h1>
+          <p class="text-light content-para">Share your knowledge with 15k+ curated Entrepreneurs and Build your Personal Brand.</p>
+        </div>
+      </div>
+  </div>
+  </section>
+
+  <!-- for tablet and mobile resolution -->
+
+  <section class="d-md-block d-lg-none" id="main-content">
+    <div class="container">
+      <div class="content-title">
+          <h1>Our Key</br>
+            <span>Achievements<span>
+          </h1>
+      </div>
+      <div class="row feature-content">
+        <div class="col-md-12">
+          <h1 class="text-light"><span class="content-highlighter text-semibold">2K+</span> Ideas Pushed</h1>
+          <p class="text-light content-para">Push your Ideas and Get feedback from like-minded Entrepreneurs. </p>
+        </div>
+
+        <div class="col-md-12">
+          <img src="./res/1.png"/>
+        </div>
+      </div>
+
+      <div class="row feature-content">
+        <div class="col-md-12">
+          <h1 class="text-light"><span class="content-highlighter text-semibold">1K+</span> Startups Launched</h1>
+          <p class="text-light content-para">India’s only platform to Launch your startup and Gain initial traction.</p>
+        </div>
+        <div class="col-md-12">
+          <img src="./res/2.png"/>
+        </div>
+      </div>
+
+      <div class="row feature-content">
+        <div class="col-md-12">
+          <h1 class="text-light"><span class="content-highlighter text-semibold">10K+</span> Problems Pushed</h1>
+          <p class="text-light content-para">Ask questions and Seek connections in India’s most active community of Entrepreneurs and Investors.</p>
+        </div>
+        <div class="col-md-12">
+          <img src="./res/3.jpg"/>
+        </div>
+      </div>
+
+      <div class="row feature-content">
+        <div class="col-md-12">
+          <h1 class="text-light"><span class="content-highlighter text-semibold">Countless</span> Knowledge Shared</h1>
+          <p class="text-light content-para">Share your knowledge with 15k+ curated Entrepreneurs and Build your Personal Brand.</p>
+        </div>
+        <div class="col-md-12">
+          <img src="./res/4.png"/>
+        </div>
+      </div>
+  </div>
+  </section>
+<!-- Stats with bg image -->
+<section class="main-stats">
+  <div class="stats-wrapper">
+    <div class="stats">
+      <p class="text-semibold">15K+</p>
+      <p class="text-light line2">Pushstarters</p>
+    </div>
+    <div class="stats">
+        <p class="text-semibold">20+</p>
+        <p class="text-light line2">Cities</p>
+    </div>
+    <div class="stats">
+        <p class="text-semibold">100+</p>
+        <p class="text-light line2">Events</p>
+    </div>
+  </div>
+</section>
+
+<!--  <section class="main-team">  <div class="row">
+        <div class="team-wrapper">
+          <div class="team">
+           <img src="./res/p1.png">
+            <p>Vinayak Deshpande</p>
+            <p>CTO</p>
+          </div>
+        </div>
+      </div>
+  </section>
+-->
+  <section class="main-newsletter">
+    <div class="container">
+      <div class="newsletter">
+          <p class="text-light">Want to Join Our Ever </br>Growing Family? </p>
+          <div class="subscription-form">
+            <form id="newContact" onsubmit="contactScript(this);return false">
+              <div class="input-group">
+                <input type="email" name="email" id="email" placeholder="Enter your email id..." class="form-control subscribe-mail" required >
+
+                <div class="input-group-btn">
+                    <input type="submit" value="Join Now" class="btn btn-default subscribe-button" id="subscribe-submit"/>
+                </div>
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+    <div class="city">
+      <img src="./res/city.png">
+    </div>
+  </section>
+
+  <section class="main-contact">
+      <div class="container footer d-none d-lg-block">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="foot-content">
+              <p class="title text-semibold">
+                <img src="./res/logo.png" style="height: 66.8px; width: 66.8px;" />
+                PUSHSTART</p>
+              <div class="footer-text">
+                <p class="text-light">A global platform for
+                  Entrepreneurs to
+                  Express themselves and
+                  Connect with other like
+                  minded Entrepreneur.</p>
+              </div>
+              <div class="social-btn">
+                  <a href="https://www.facebook.com/Pushstarter/" target="_blank" class="Group-56"><img src="./res/fb.svg"></a>
+                  <a href="https://www.instagram.com/pushstarter/?hl=en" target="_blank" class="Group-56"><img src="./res/insta.svg"></a>
+                  <a href="https://www.linkedin.com/company/pushstarter/" target="_blank" class="Group-56"><img src="./res/linkedin.svg"></a>
+                  <a href="https://twitter.com/pushstarter" target="_blank" class="Group-56"><img src="./res/twitter.svg"></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="foot-content">
+                <p class="title text-semibold">CONTACT US</p>
+                <div class="footer-text">
+                  <p class="text-light"><i class="material-icons">location_on</i>Sudama Nagar, Thane</br>Maharashtra, India, </br>400605.</p>
+                  <p class="text-light"><i class="material-icons">phone</i> <a href="tel:+918108669080" style="text-decoration: none">(+91)-8108669080</a></p>
+                  <p class="text-light"><i class="material-icons">email</i><a href="mailto:hello@pushstart.in" style="text-decoration: none">hello@pushstart.in</a></p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- for screen smaller or equal to 992 (Tablet) -->
+      <div class="container footer d-md-block d-lg-none">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="foot-content">
+              <p class="title text-semibold">
+                <img src="./res/logo.png" style="height: 66.8px; width: 66.8px;" />
+                PUSHSTART</p>
+              <div class="footer-text">
+                <p class="text-light" style="width: 175px; margin-left: 40px;">A global platform for
+                  Entrepreneurs to
+                  Express themselves and
+                  Connect with other like-minded
+                  Entrepreneurs.</p>
+              </div>
+              <div class="foot-content">
+                  <p class="title text-semibold">CONTACT US</p>
+                  <div class="footer-text">
+                    <p class="text-light"><i class="material-icons">location_on</i>Sudama Nagar, Thane</br>Maharashtra, India, </br>4000072.</p>
+                    <p class="text-light"><i class="material-icons">phone</i><a href="tel:+918108669080" style="text-decoration: none">(+91)-8108669080</a></p>
+                    <p class="text-light"><i class="material-icons">email</i>hello@pushstart.in</p>
+                  </div>
+              </div>
+              <div class="social-btn">
+                <a href="https://www.facebook.com/Pushstarter/" target="_blank" class="Group-56"><img src="./res/fb.svg"></a>
+                <a href="https://www.instagram.com/pushstarter/?hl=en" target="_blank" class="Group-56"><img src="./res/insta.svg"></a>
+                <a href="https://www.linkedin.com/company/pushstarter/" target="_blank" class="Group-56"><img src="./res/linkedin.svg"></a>
+                <a href="https://twitter.com/pushstarter" target="_blank" class="Group-56"><img src="./res/twitter.svg"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+<section class="copyright">
+  <div>
+    <p class="text-light" style="font-size: 14px;">Copyright © Pushstart 2018</p>
+  </div>
+</section>
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="./res/scripts/slick.min.js"></script>
+  <!-- bootstrap script -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+
+    <script type= "text/javascript">
+      $(document).ready(function() {
+        $('#email').on('input', function () {
+          var elem = document.getElementById("subscribe-submit");
+          elem.value = "Push Now";
+         });
+        // $("subscribe-submit").submit(contactScript);
+        $('#email-header').on('input', function () {
+          var elem = document.getElementById("subscribe-submit");
+          elem.value = "Push Now";
+         });
+        // $("subscribe-submit-header").submit(contactScript);
+        $('#email-small').on('input', function () {
+          var elem = document.getElementById("subscribe-submit");
+          elem.value = "Push Now";
+         });
+        // $("subscribe-submit-small").submit(contactScript);
+    });
+
+// Initialize Firebase
+var config = {
+        apiKey: "AIzaSyC3xSyhJ03L1FM7TnF8TDyCRjISKKQ6OnQ",
+        authDomain: "pushstart-4a8a6.firebaseapp.com",
+        databaseURL: "https://pushstart-4a8a6.firebaseio.com",
+        projectId: "pushstart-4a8a6",
+        storageBucket: "pushstart-4a8a6.appspot.com",
+        messagingSenderId: "475687342312"
+      };
+      firebase.initializeApp(config);
+    var db = firebase.firestore();
+
+    db.settings({ timestampsInSnapshots: true });
+
+var  contactScript = function(element) {
+  console.log(element.id)
+if(element.id == "subscribe-submit") {
+  var elem = document.getElementById("subscribe-submit");
+        if (elem.value == "Push Now") elem.value = "Pushing..";
+} else if (element.id == "subscribe-submit-header") {
+  var elem_header = document.getElementById("subscribe-submit-header");
+        if (elem_header.value == "Push Now") elem_header.value = "Pushing..";
+} else {
+  var elem_small = document.getElementById("subscribe-submit-small");
+        if (elem_small.value == "Push Now") elem_small.value = "Pushing..";
+}
+var emailsend
+  console.log('-------------');
+  if(element.id == "subscribe-submit") {
+   emailsend = $("#email").val();
+  } else if (element.id == "subscribe-submit-header") {
+    emailsend = $("#email-header").val();
+
+  } else {
+    emailsend = $("#email-small").val();
+
+  }
+
+    const usersRef = db.collection('web_subscribe').doc(emailsend);
+
+    usersRef.get()
+  .then((docSnapshot) => {
+    if (docSnapshot.exists) {
+      usersRef.onSnapshot((doc) => {
+
+if(element.id == "subscribe-submit") {
+  var elem = document.getElementById("subscribe-submit");
+        if (elem.value == "Pushing..") elem.value = "Pushed!";
+} else if (element.id == "subscribe-submit-header") {
+  var elem_header = document.getElementById("subscribe-submit-header");
+        if (elem_header.value == "Pushing..") elem_header.value = "Pushed!";
+} else {
+  var elem_small = document.getElementById("subscribe-submit-small");
+        if (elem_small.value == "Pushing..") elem_small.value = "Pushed!";
+}
+      });
+    } else {
+      console.log(emailsend+'-------------');
+    return   db.collection("web_subscribe").doc(emailsend).set({
+    email: emailsend
+}).then(function() {
+
+if(element.id == "subscribe-submit") {
+  var elem = document.getElementById("subscribe-submit");
+        if (elem.value == "Pushing..") elem.value = "Pushed!";
+} else if (element.id == "subscribe-submit-header") {
+  var elem_header = document.getElementById("subscribe-submit-header");
+        if (elem_header.value == "Pushing..") elem_header.value = "Pushed!";
+} else {
+  var elem_small = document.getElementById("subscribe-submit-small");
+        if (elem_small.value == "Pushing..") elem_small.value = "Pushed!";
+}
+
+})
+.catch(function(error) {
+    console.error("Error writing document: ", error);
+    if(element.id == "subscribe-submit") {
+  var elem = document.getElementById("subscribe-submit");
+        if (elem.value == "Pushing..") elem.value = "Pushed!";
+} else if (element.id == "subscribe-submit-header") {
+  var elem_header = document.getElementById("subscribe-submit-header");
+        if (elem_header.value == "Pushing..") elem_header.value = "Pushed!";
+} else {
+  var elem_small = document.getElementById("subscribe-submit-small");
+        if (elem_small.value == "Pushing..") elem_small.value = "Pushed!";
+}
+});
+    }
+});
+}
+    </script>
+
+
+</body>
+
+</html>

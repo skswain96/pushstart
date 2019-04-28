@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="baseline-phone-24px" viewBox="0 0 42.66 42.66">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{fill:#fff}
+        </style>
+    </defs>
+    <path id="Path_259" d="M0 0h42.66v42.66H0z" class="cls-1" data-name="Path 259"/>
+    <path id="Path_260" d="M9.435 16.847A26.927 26.927 0 0 0 21.148 28.56l3.91-3.91a1.767 1.767 0 0 1 1.813-.427 20.276 20.276 0 0 0 6.346 1.013 1.783 1.783 0 0 1 1.778 1.778v6.2a1.783 1.783 0 0 1-1.778 1.778A30.215 30.215 0 0 1 3 4.778 1.783 1.783 0 0 1 4.778 3H11a1.783 1.783 0 0 1 1.778 1.778 20.193 20.193 0 0 0 1.013 6.346 1.784 1.784 0 0 1-.444 1.813z" class="cls-2" data-name="Path 260" transform="translate(2.332 2.332)"/>
+</svg>
